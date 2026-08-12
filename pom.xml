@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This file tells Maven (a build tool) what libraries this project needs.
+  The big benefit for your team: nobody has to manually download a .jar
+  file and add it to their classpath. When any of you opens this folder
+  in VS Code (with the "Extension Pack for Java" installed), Maven reads
+  this file and automatically downloads the MySQL connector into a local
+  cache. Same file -> same library version -> same behaviour on every
+  laptop.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.foodsystem</groupId>
+    <artifactId>food-donation-system</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- No external dependencies needed - this project uses local CSV
+         file storage (java.io) rather than a database, so nothing
+         needs to be downloaded from Maven Central to build or run it. -->
+
+    <build>
+        <plugins>
+            <!-- Lets you run "mvn exec:java -Dexec.mainClass=com.foodsystem.Main"
+                 from the terminal instead of manually building a classpath. -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.2.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
