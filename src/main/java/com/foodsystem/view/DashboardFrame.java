@@ -110,7 +110,7 @@ public class DashboardFrame extends JFrame {
         cardContainer.setBackground(UITheme.BACKGROUND);
 
         cardContainer.add(new PlaceholderPanel("Donation Module"), CARD_DONATION);
-        cardContainer.add(new PlaceholderPanel("Request Module"), CARD_REQUEST);
+        cardContainer.add(new RequestFormPanel(loggedInUser), CARD_REQUEST);
 
         if (loggedInUser.isAdmin()) {
             cardContainer.add(new PlaceholderPanel("Admin Panel"), CARD_ADMIN);
