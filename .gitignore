@@ -1,0 +1,8 @@
+# 1. 擋掉 Maven 編譯出來的 class 檔（絕對不能傳）
+target/
+
+# 2. 擋掉 IDE 產生的暫存編譯檔
+bin/
+.vscode/
+.idea/
+*.class
